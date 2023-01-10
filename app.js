@@ -9,7 +9,7 @@ mongoose.set("strictQuery", false);
 app.use(express.json());
 app.use("/user", require("./apis/user.api"));
 app.use("/message", require("./apis/message.api"));
-app.get("/", (req, res) => res.send("Welcome To My API 'Saraha' , By Ahmed Basuoni!"));
+app.get("/", (req, res) => res.send("Welcome To My API - Saraha - , By Ahmed Basuoni!"));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 //const link =  'mongodb://0.0.0.0:27017/saraha'
