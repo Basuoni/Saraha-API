@@ -5,8 +5,9 @@ const mongoose = require("mongoose");
 module.exports.sendMessage = async (req, res) => {
   const { message, storyId } = req.body;
   const now  =  new Date();
-  // const value = date.format(now,'hh:mm A , DD/MM/YYYY'); ,date: value
+  // const value = date.format(now,'hh:mm A , DD/MM/YYYY');// ,date: value
   await mesModel.insertMany({message, storyId});
+  res.status(201);
   res.json({ message: "Success" });
 };
 module.exports.getMessages = async (req, res) => {

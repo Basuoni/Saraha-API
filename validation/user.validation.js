@@ -21,7 +21,7 @@ module.exports.userValidation = (req, res, next) => {
     error.details.map((e) => {
       errorList.push(e.message);
     });
-    res.json({ message: "Error", errors: errorList });
+    res.json({ message: "Unconfirmed Data: Verify your data.", errors: errorList });
   } else {
     next();
   }

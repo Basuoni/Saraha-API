@@ -5,8 +5,10 @@ module.exports.publishStory = async (req, res) => {
   const userId = req.id;
   if (question.trim().length) {
     await storyModel.insertMany({ question,userId });
+    res.status(201);
     res.json({ message: "Success" });
   } else {
+    res.status(204);
     res.json({ message: "You can't send empty question." });
   }
 };
