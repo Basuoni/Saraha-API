@@ -1,5 +1,22 @@
 const userModel = require("../models/user.model");
 const jwt = require("jsonwebtoken");
+module.exports.checkContacts = async (req,res)=>{
+
+  const {contacts} = req.body
+  const validContacts = []
+  await Promise.all( contacts.map(async phone => {
+    const user = await userModel.findOne({ phone });
+    if (user) {
+      validContacts.push({
+        "phone" : phone,
+        "id" : user._id,
+        "store" : user.isPublish
+      })
+    }
+  }))
+  res.json({validContacts})
+}
+
 module.exports.signup = async (req, res) => {
   const { name, phone, password, age } = req.body;
   const user = await userModel.findOne({ phone });
