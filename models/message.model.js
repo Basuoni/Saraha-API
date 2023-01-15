@@ -4,7 +4,6 @@ const schema = mongoose.Schema(
   {
     message: String,
     storyId: mongoose.SchemaTypes.ObjectId,
-    // date:String
   },
   { timestamps: true }
 );
