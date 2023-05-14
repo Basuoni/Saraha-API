@@ -13,7 +13,7 @@ app.use("/user", require("./apis/user.api"));
 app.use("/story", require("./apis/story.api"));
 app.use("/message", require("./apis/message.api"));
 app.get("/",async (req, res) => {
-  res.send("Welcome To My API - Saraha -");
+  res.send("Welcome To My API - Saraha - V2");
 });
 
 app.listen(port, () => console.log(`Example app listening on port  ${port}!`));
